@@ -4,6 +4,7 @@
   "description": "Adds a button to Bing to open the current map in Google Maps.",
   "version": "0.1",
   "author": "Austin Dizzy",
+  "homepage_url": "https://github.com/AustinDizzy/Bing-Maps-to-Google-Maps",
   "manifest_version": 2,
   "content_scripts": [{
       "matches": ["http://www.bing.com/maps/*"],
