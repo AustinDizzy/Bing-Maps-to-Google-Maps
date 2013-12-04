@@ -14,11 +14,12 @@ $(function(){
 	jQuery(document).bind("mousewheel wheel DOMMouseScroll.zoom click load",function(){
 		mapStuff = jQuery.parseJSON(document.getElementById("MapControl_MapControl").value.replace(/'/g, "\""));
 		console.log(mapStuff);
-		jQuery("#mapsToGoogleThingy").attr("href", "https://maps.google.com/maps?t=m&ll="+mapStuff.C.Latitude+"%2C"+mapStuff.C.Longitude+"&z="+mapStuff.Z+"&q="+(jQuery(".infobox-title").clone().children().remove().end().text() || jQuery("#srchstitle").text() || ""));
+		
+		jQuery("#mapsToGoogleThingy").attr("href", "https://maps.google.com/maps?t=m&ll="+mapStuff.C.Latitude+"%2C"+mapStuff.C.Longitude+"&z="+mapStuff.Z+((jQuery(".infobox-title").text() || jQuery("#srchstitle").text()) ? "&q="+(jQuery(".infobox-title").clone().children().remove().end().text() || jQuery("#srchstitle").text()) : ""));
 	});
 
 	jQuery("#mapsToGoogleThingy").click(function(){
-		jQuery("#mapsToGoogleThingy").attr("href", "https://maps.google.com/maps?t=m&ll="+mapStuff.C.Latitude+"%2C"+mapStuff.C.Longitude+"&z="+mapStuff.Z+"&q="+(jQuery(".infobox-title").clone().children().remove().end().text() || jQuery("#srchstitle").text() || ""));
+		jQuery(this).attr("href", "https://maps.google.com/maps?t=m&ll="+mapStuff.C.Latitude+"%2C"+mapStuff.C.Longitude+"&z="+mapStuff.Z+((jQuery(".infobox-title").text() || jQuery("#srchstitle").text()) ? "&q="+(jQuery(".infobox-title").clone().children().remove().end().text() || jQuery("#srchstitle").text()) : ""));
 		var a = jQuery("<a>").attr("href", jQuery(this).attr("href")).attr("target", "_blank").appendTo("body");
         	a[0].click();
         	a[0].remove();
