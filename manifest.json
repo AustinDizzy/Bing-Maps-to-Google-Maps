@@ -1,0 +1,13 @@
+{
+  "name": "Bing Maps to Google Maps",
+  "short_name": "Bing to Google Maps",
+  "description": "Adds a button to Bing to open the current map in Google Maps.",
+  "version": "0.1",
+  "author": "Austin Dizzy",
+  "manifest_version": 2,
+  "content_scripts": [{
+      "matches": ["http://www.bing.com/maps/*"],
+      "js": ["jquery.js", "maps.js"]
+    }],
+    "web_accessible_resources": ["jquery-2.0.3.min.map"]
+}
