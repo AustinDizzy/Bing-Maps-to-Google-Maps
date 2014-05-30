@@ -7,7 +7,7 @@
   "homepage_url": "https://github.com/AustinDizzy/Bing-Maps-to-Google-Maps",
   "manifest_version": 2,
   "content_scripts": [{
-      "matches": ["http://www.bing.com/maps/*"],
+      "matches": ["http://www.bing.com/maps/*", "https://www.bing.com/maps/*"],
       "js": ["jquery.js", "maps.js"]
     }],
     "web_accessible_resources": ["jquery-2.0.3.min.map"]
